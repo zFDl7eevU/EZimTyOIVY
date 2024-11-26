@@ -1,0 +1,19 @@
+before:
+  hooks:
+    - go mod download
+builds:
+- main: ./runsd
+  binary: runsd
+  env:
+  - CGO_ENABLED=0
+  goos:
+    - linux
+  goarch:
+    - amd64
+archives:
+- format: binary
+  name_template: "{{ .ProjectName }}"
+checksum:
+  disable: true
+changelog:
+  skip: true
