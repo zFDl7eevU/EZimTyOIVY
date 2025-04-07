@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/dspyt"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "pip"
+    directory: "/utils"
+    schedule:
+      interval: "weekly"
