@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Duel Arena</title>
+  <link rel="stylesheet" href="src/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div id="game-container">
+
+    <!-- Audio elements -->
+    <audio id="bgm" loop>
+      <source src="/code-duel-arena/public/pokemon-battle.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="damage-sfx">
+      <source src="/code-duel-arena/public/hit-super-effective.mp3" type="audio/wav">
+    </audio>
+    <audio id="win-sfx">
+      <source src="/code-duel-arena/public/06-caught-a-pokemon.mp3" type="audio/wav">
+    </audio>
+    <audio id="lose-sfx">
+      <source src="/code-duel-arena/public/bumpintowall_X5CNQPB.mp3" type="audio/wav">
+    </audio>
+
+    <!-- Music toggle button -->
+    <button id="music-toggle" class="music-btn">Toggle Music: ON</button>
+    <!-- Battle Area -->
+    <div class="battle-area">
+      <!-- Player Sprite -->
+      <div class="sprite-left">
+        <div class="hp-container">
+          <div class="hp-bar" id="hp-player" style="width: 100%; background-color: green;"></div>
+          <p class="hp-text" id="hp-text-player">100%</p>
+        </div>
+        <img width=20% src="https://img.pokemondb.net/sprites/black-white/anim/back-normal/pikachu.gif" alt="Pikachu">
+        
+      </div>
+
+      <!-- Bot Sprite -->
+      <div class="sprite-right">
+        <img width=20% src="https://img.pokemondb.net/sprites/black-white/anim/normal/meowth.gif" alt="Meowth">
+        <div class="hp-container">
+          <div class="hp-bar" id="hp-bot" style="width: 100%; background-color: green;"></div>
+          <p class="hp-text" id="hp-text-bot">100%</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Battle Log -->
+    <div class="battle-log" id="battle-log">
+      <p>Welcome to the Pokémon Code Duel Arena!</p>
+    </div>
+
+    <p id="timer">Time Left: 1:30</p>
+
+
+    <!-- Main Area -->
+    <div class="main-area">
+      <!-- Problem Section -->
+      <div class="problem-section" id="problem-section">
+        <h2>Pick a move to try</h2>
+        <div class="move-selection">
+          <h3>Choose Your Move</h3>
+          <div class="moves">
+            <button class="move-btn" data-move="quick_attack">Quick Attack</button>
+            <button class="move-btn" data-move="thunder_shock">Thunder Shock</button>
+            <button class="move-btn" data-move="slam">Slam</button>
+            <button class="move-btn" data-move="thunder_bolt">Thunder Bolt</button>
+          </div>
+        </div>
+
+        <p id="problem-text"></p>
+      </div>
+
+      <!-- Code Section -->
+      <div class="code-section">
+        <h4>Write code here!</h4>
+        <div id="editor"></div>
+        <div class="buttons">
+          <button id="submit-code">Attack</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="game-over-modal" class="modal hidden">
+      <div class="modal-content">
+        <h2 id="game-over-message"></h2>
+        <button id="restart-btn">Play Again</button>
+      </div>
+    </div>
+    
+
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
+
